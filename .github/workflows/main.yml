@@ -14,15 +14,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Show Swift version
-        run: sudo apt update -y && sudo apt install zip -y
+      - name: Install dependencies
+        run: |
+          sudo apt update -y
+          sudo apt install -y zip
 
-      - name: Run
-        run: chmod +x Filza26Maker.sh ./Filza26Maker.sh
-          
+      - name: Run script
+        run: |
+          chmod +x Filza26Maker.sh
+          ./Filza26Maker.sh
 
       - name: Upload build output
         uses: actions/upload-artifact@v4
         with:
-             name: build
-             path: *.ipa
+          name: build
+          path: "*.ipa"
