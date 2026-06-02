@@ -75,6 +75,11 @@ else
   echo "[ i ] Local Linux build complete"
 fi
 
+if [[ "$IS_GITHUB" == true ]]; then
+  echo "[ i ] Moving IPA to workspace"
+  cp -f "$IPA_NAME" "$GITHUB_WORKSPACE/" || true
+fi
+
 rm -rf "$WORKDIR"
 
 echo "[ + ] Done: $IPA_NAME"
