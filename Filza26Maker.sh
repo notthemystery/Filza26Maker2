@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eo pipefail
 
-DEB_URL="${1:-https://tigisoftware.com/cydia/com.tigisoftware.filza_4.0.1-2_iphoneos-arm.deb}"
+DEB_URL="${1:-https://tigisoftware.com/cydia/com.tigisoftware.filza_4.0.1-2_iphoneos-arm64.deb}"
 
 WORKDIR="$(mktemp -d)"
 DEB_LOCAL="$WORKDIR/filza.deb"
